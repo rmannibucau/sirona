@@ -21,7 +21,7 @@
   <parent>
     <artifactId>sirona-server</artifactId>
     <groupId>com.github.rmannibucau.sirona</groupId>
-    <version>0.5-SNAPSHOT</version>
+    <version>0.5</version>
   </parent>
 
   <artifactId>sirona-collector-store</artifactId>
