@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.sirona.reporting.template;
+package com.github.rmannibucau.sirona.reporting.template;
 
 import com.gargoylesoftware.htmlunit.NicelyResynchronizingAjaxController;
 import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.WebClient;
 import org.apache.catalina.startup.Constants;
-import org.apache.sirona.reporting.web.registration.SironaReportingInitializer;
-import org.apache.sirona.web.lifecycle.SironaLifecycle;
+import com.github.rmannibucau.sirona.reporting.web.registration.SironaReportingInitializer;
+import com.github.rmannibucau.sirona.web.lifecycle.SironaLifecycle;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;

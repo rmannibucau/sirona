@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.sirona.reporting;
+package com.github.rmannibucau.sirona.reporting;
 
-import org.apache.sirona.Role;
-import org.apache.sirona.counters.Counter;
-import org.apache.sirona.reporting.web.handler.TemplateHelper;
-import org.apache.sirona.reporting.web.plugin.api.Template;
-import org.apache.sirona.reporting.web.plugin.report.format.CSVFormat;
-import org.apache.sirona.reporting.web.plugin.report.format.Format;
-import org.apache.sirona.reporting.web.template.Templates;
-import org.apache.sirona.repositories.Repository;
+import com.github.rmannibucau.sirona.Role;
+import com.github.rmannibucau.sirona.counters.Counter;
+import com.github.rmannibucau.sirona.reporting.web.handler.TemplateHelper;
+import com.github.rmannibucau.sirona.reporting.web.plugin.api.Template;
+import com.github.rmannibucau.sirona.reporting.web.plugin.report.format.CSVFormat;
+import com.github.rmannibucau.sirona.reporting.web.plugin.report.format.Format;
+import com.github.rmannibucau.sirona.reporting.web.template.Templates;
+import com.github.rmannibucau.sirona.repositories.Repository;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

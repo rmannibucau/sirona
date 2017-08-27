@@ -1,2 +1,4 @@
 This podling has been retired, please see:
 http://incubator.apache.org/projects/index.html#sirona
+
+Project is now maintained at https://github.com/rmannibucau/sirona.

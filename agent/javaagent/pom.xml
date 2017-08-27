@@ -18,28 +18,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <artifactId>sirona-agent</artifactId>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>sirona-javaagent</artifactId>
-  <name>Apache Sirona Incubator :: Agent :: JavaAgent</name>
+  <name>Sirona Incubator :: Agent :: JavaAgent</name>
 
   <properties>
     <test.debug.remote>false</test.debug.remote>
     <sirona.agent.debug>false</sirona.agent.debug>
-    <asm.version>5.0.4</asm.version>
-    <agent.class>org.apache.sirona.javaagent.SironaAgent</agent.class>
-    <java.runtime>15</java.runtime>
-    <maven.compiler.source>1.5</maven.compiler.source>
-    <maven.compiler.target>1.5</maven.compiler.target>
+    <asm.version>6.0_BETA</asm.version>
+    <agent.class>com.github.rmannibucau.sirona.javaagent.SironaAgent</agent.class>
+    <java.runtime>16</java.runtime>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-aop</artifactId>
       <exclusions>
         <exclusion>
@@ -50,17 +50,17 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-api</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-core</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-store-memory</artifactId>
     </dependency>
 
@@ -68,11 +68,6 @@
       <groupId>org.ow2.asm</groupId>
       <artifactId>asm-all</artifactId>
       <version>${asm.version}</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.codehaus.mojo</groupId>
-      <artifactId>animal-sniffer-annotations</artifactId>
     </dependency>
 
     <dependency>
@@ -117,9 +112,10 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
+        <version>3.0.2</version>
         <executions>
           <execution>
-            <id>pre-build-jar</id>
+            <id>default-jar</id>
             <phase>test-compile</phase>
             <goals>
               <goal>jar</goal>
@@ -167,16 +163,16 @@
               <relocations>
                 <relocation>
                   <pattern>org.objectweb.asm</pattern>
-                  <shadedPattern>org.apache.sirona.asm</shadedPattern>
+                  <shadedPattern>com.github.rmannibucau.sirona.asm</shadedPattern>
                 </relocation>
               </relocations>
               <artifactSet>
                 <includes>
                   <include>org.ow2.asm:asm-all</include>
-                  <include>org.apache.sirona:sirona-aop</include>
-                  <include>org.apache.sirona:sirona-core</include>
-                  <include>org.apache.sirona:sirona-api</include>
-                  <include>org.apache.sirona:sirona-store-memory</include>
+                  <include>com.github.rmannibucau.sirona:sirona-aop</include>
+                  <include>com.github.rmannibucau.sirona:sirona-core</include>
+                  <include>com.github.rmannibucau.sirona:sirona-api</include>
+                  <include>com.github.rmannibucau.sirona:sirona-store-memory</include>
                 </includes>
               </artifactSet>
             </configuration>

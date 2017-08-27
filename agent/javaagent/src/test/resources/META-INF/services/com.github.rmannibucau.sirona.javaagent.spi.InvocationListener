@@ -1,0 +1,2 @@
+com.github.rmannibucau.test.sirona.javaagent.HttpUrlConnectionAddHeaderTest$HttpUrlConnectionHeaderAdder
+com.github.rmannibucau.sirona.javaagent.listener.MockPathTrackingInvocationListener

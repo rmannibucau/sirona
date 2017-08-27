@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.sirona.reporting.template;
+package com.github.rmannibucau.sirona.reporting.template;
 
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import org.apache.sirona.configuration.ioc.IoCs;
-import org.apache.sirona.repositories.Repository;
-import org.apache.sirona.status.NodeStatus;
-import org.apache.sirona.status.Status;
-import org.apache.sirona.status.ValidationResult;
-import org.apache.sirona.store.status.NodeStatusDataStore;
+import com.github.rmannibucau.sirona.configuration.ioc.IoCs;
+import com.github.rmannibucau.sirona.repositories.Repository;
+import com.github.rmannibucau.sirona.status.NodeStatus;
+import com.github.rmannibucau.sirona.status.Status;
+import com.github.rmannibucau.sirona.status.ValidationResult;
+import com.github.rmannibucau.sirona.store.status.NodeStatusDataStore;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

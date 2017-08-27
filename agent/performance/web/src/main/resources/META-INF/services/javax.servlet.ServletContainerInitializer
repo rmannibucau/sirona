@@ -1,1 +1,1 @@
-org.apache.sirona.web.registration.WebSironaInitializer
+com.github.rmannibucau.sirona.web.registration.WebSironaInitializer

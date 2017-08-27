@@ -18,7 +18,7 @@ under the License.
 -->
 ## About
 
-Apache Sirona provides a simple, lightweight toolkit to instrument java application monitoring capabilities, including
+Sirona provides a simple, lightweight toolkit to instrument java application monitoring capabilities, including
 performances and thread concurrency.
 
 More documentation is available in the [Main site](http://sirona.incubator.apache.org)

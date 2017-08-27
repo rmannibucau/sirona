@@ -18,19 +18,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <artifactId>sirona-agent-store</artifactId>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>sirona-cube</artifactId>
-  <name>Apache Sirona Incubator :: Agent :: Store :: Cube</name>
+  <name>Sirona Incubator :: Agent :: Store :: Cube</name>
   <description>A DataStore for https://github.com/square/cube</description>
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-core</artifactId>
       <scope>provided</scope>
     </dependency>
@@ -126,32 +126,32 @@
               <relocations>
                 <relocation>
                   <pattern>com.lmax</pattern>
-                  <shadedPattern>org.apache.sirona.com.lmax</shadedPattern>
+                  <shadedPattern>com.github.rmannibucau.sirona.com.lmax</shadedPattern>
                 </relocation>
                 <relocation>
                   <pattern>org.apache.http</pattern>
-                  <shadedPattern>org.apache.sirona.org.apache.http</shadedPattern>
+                  <shadedPattern>com.github.rmannibucau.sirona.org.apache.http</shadedPattern>
                 </relocation>
                 <relocation>
                   <pattern>org.apache.commons</pattern>
-                  <shadedPattern>org.apache.sirona.org.apache.commons</shadedPattern>
+                  <shadedPattern>com.github.rmannibucau.sirona.org.apache.commons</shadedPattern>
                 </relocation>
                 <relocation>
                   <pattern>com.ning.http</pattern>
-                  <shadedPattern>org.apache.sirona.com.ning.http</shadedPattern>
+                  <shadedPattern>com.github.rmannibucau.sirona.com.ning.http</shadedPattern>
                 </relocation>
                 <relocation>
                   <pattern>org.jboss.netty</pattern>
-                  <shadedPattern>org.apache.sirona.org.jboss.netty</shadedPattern>
+                  <shadedPattern>com.github.rmannibucau.sirona.org.jboss.netty</shadedPattern>
                 </relocation>
                 <relocation>
                   <pattern>org.slf4j</pattern>
-                  <shadedPattern>org.apache.sirona.org.slf4j</shadedPattern>
+                  <shadedPattern>com.github.rmannibucau.sirona.org.slf4j</shadedPattern>
                 </relocation>
                 <!--
                 <relocation>
-                  <pattern>org.apache.sirona</pattern>
-                  <shadedPattern>org.apache.sirona.sirona</shadedPattern>
+                  <pattern>com.github.rmannibucau.sirona</pattern>
+                  <shadedPattern>com.github.rmannibucau.sirona.sirona</shadedPattern>
                 </relocation>
                 -->
               </relocations>
@@ -168,7 +168,7 @@
           <configuration>
             <systemPropertyVariables>
               <collector.server.port>${collector.server.port}</collector.server.port>
-              <org.apache.sirona.cube.CubeBuilder.collector>http://localhost:${collector.server.port}/1.0/event/put</org.apache.sirona.cube.CubeBuilder.collector>
+              <com.github.rmannibucau.sirona.cube.CubeBuilder.collector>http://localhost:${collector.server.port}/1.0/event/put</com.github.rmannibucau.sirona.cube.CubeBuilder.collector>
             </systemPropertyVariables>
           </configuration>
         </plugin>

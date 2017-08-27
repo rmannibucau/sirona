@@ -19,13 +19,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <artifactId>sirona-reporting</artifactId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
 
   <artifactId>sirona-reporting-webapp</artifactId>
-  <name>Apache Sirona Incubator :: Server :: Reporting :: Webapp</name>
+  <name>Sirona Incubator :: Server :: Reporting :: Webapp</name>
   <packaging>war</packaging>
 
   <properties>
@@ -45,26 +45,26 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-reporting-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-core</artifactId>
       <scope>provided</scope> <!-- using to put it in the container to get JDBC monitoring and deploy the webapp -->
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-aop</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-plugins-api</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-web</artifactId>
     </dependency>
     <dependency>

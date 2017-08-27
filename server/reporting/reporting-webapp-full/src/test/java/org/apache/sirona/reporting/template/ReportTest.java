@@ -14,16 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.sirona.reporting.template;
+package com.github.rmannibucau.sirona.reporting.template;
 
 import com.gargoylesoftware.htmlunit.WebAssert;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import org.apache.sirona.Role;
-import org.apache.sirona.counters.Counter;
-import org.apache.sirona.counters.Unit;
-import org.apache.sirona.reporting.web.plugin.report.format.MapFormat;
-import org.apache.sirona.repositories.Repository;
+import com.github.rmannibucau.sirona.Role;
+import com.github.rmannibucau.sirona.counters.Counter;
+import com.github.rmannibucau.sirona.counters.Unit;
+import com.github.rmannibucau.sirona.reporting.web.plugin.report.format.MapFormat;
+import com.github.rmannibucau.sirona.repositories.Repository;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

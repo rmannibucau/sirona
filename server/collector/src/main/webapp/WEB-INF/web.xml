@@ -21,7 +21,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <servlet>
     <servlet-name>collector</servlet-name>
-    <servlet-class>org.apache.sirona.collector.server.Collector</servlet-class>
+    <servlet-class>com.github.rmannibucau.sirona.collector.server.Collector</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>

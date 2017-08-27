@@ -19,13 +19,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <artifactId>sirona-reporting</artifactId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
 
   <artifactId>sirona-reporting-ui</artifactId>
-  <name>Apache Sirona Incubator :: Server :: Reporting :: Ui</name>
+  <name>Sirona Incubator :: Server :: Reporting :: Ui</name>
   <packaging>war</packaging>
 
   <properties>
@@ -41,12 +41,12 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-core</artifactId>
       <scope>provided</scope> <!-- using to put it in the container to get JDBC monitoring and deploy the webapp -->
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-reporting-api</artifactId>
     </dependency>
 
@@ -104,12 +104,12 @@
           <skip>${sirona.reporting.ui.tomcat.skip}</skip>
           <useTestClasspath>true</useTestClasspath>
           <systemProperties>
-            <org.apache.sirona.configuration.sirona.properties>${sirona.properties.path}</org.apache.sirona.configuration.sirona.properties>
+            <com.github.rmannibucau.sirona.configuration.sirona.properties>${sirona.properties.path}</com.github.rmannibucau.sirona.configuration.sirona.properties>
           </systemProperties>
         </configuration>
         <dependencies>
           <dependency>
-            <groupId>org.apache.sirona</groupId>
+            <groupId>com.github.rmannibucau.sirona</groupId>
             <artifactId>sirona-core</artifactId>
             <version>${project.version}</version>
           </dependency>
@@ -143,7 +143,7 @@
           <tomeeVersion>1.6.0.2</tomeeVersion>
           <tomeeClassifier>plus</tomeeClassifier>
           <libs>
-            <lib>org.apache.sirona:sirona-core:${project.version}</lib>
+            <lib>com.github.rmannibucau.sirona:sirona-core:${project.version}</lib>
           </libs>
         </configuration>
       </plugin>

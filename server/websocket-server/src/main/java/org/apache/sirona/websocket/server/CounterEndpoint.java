@@ -14,17 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.sirona.websocket.server;
+package com.github.rmannibucau.sirona.websocket.server;
 
 import org.apache.johnzon.websocket.mapper.JohnzonTextDecoder;
-import org.apache.sirona.Role;
-import org.apache.sirona.configuration.ioc.IoCs;
-import org.apache.sirona.counters.Counter;
-import org.apache.sirona.counters.Unit;
-import org.apache.sirona.math.M2AwareStatisticalSummary;
-import org.apache.sirona.repositories.Repository;
-import org.apache.sirona.store.counter.CollectorCounterStore;
-import org.apache.sirona.websocket.client.domain.WSCounter;
+import com.github.rmannibucau.sirona.Role;
+import com.github.rmannibucau.sirona.configuration.ioc.IoCs;
+import com.github.rmannibucau.sirona.counters.Counter;
+import com.github.rmannibucau.sirona.counters.Unit;
+import com.github.rmannibucau.sirona.math.M2AwareStatisticalSummary;
+import com.github.rmannibucau.sirona.repositories.Repository;
+import com.github.rmannibucau.sirona.store.counter.CollectorCounterStore;
+import com.github.rmannibucau.sirona.websocket.client.domain.WSCounter;
 
 import javax.websocket.OnMessage;
 import javax.websocket.server.ServerEndpoint;

@@ -18,14 +18,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <artifactId>sirona-agent-store</artifactId>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>sirona-graphite</artifactId>
-  <name>Apache Sirona Incubator :: Agent :: Store :: Graphite</name>
+  <name>Sirona Incubator :: Agent :: Store :: Graphite</name>
 
   <dependencies>
     <dependency>
@@ -34,7 +34,7 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-core</artifactId>
     </dependency>
 
@@ -73,7 +73,7 @@
           <configuration>
             <systemPropertyVariables>
               <collector.server.port>${collector.server.port}</collector.server.port>
-              <org.apache.sirona.graphite.GraphiteBuilder.port>${collector.server.port}</org.apache.sirona.graphite.GraphiteBuilder.port>
+              <com.github.rmannibucau.sirona.graphite.GraphiteBuilder.port>${collector.server.port}</com.github.rmannibucau.sirona.graphite.GraphiteBuilder.port>
             </systemPropertyVariables>
           </configuration>
         </plugin>

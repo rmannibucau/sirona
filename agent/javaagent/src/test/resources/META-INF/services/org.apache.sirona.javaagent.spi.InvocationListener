@@ -1,2 +1,0 @@
-org.apache.test.sirona.javaagent.HttpUrlConnectionAddHeaderTest$HttpUrlConnectionHeaderAdder
-org.apache.sirona.javaagent.listener.MockPathTrackingInvocationListener

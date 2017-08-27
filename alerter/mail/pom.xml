@@ -20,16 +20,16 @@
 
   <parent>
     <artifactId>sirona-alerter</artifactId>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
 
   <artifactId>sirona-mail-alerter</artifactId>
-  <name>Apache Sirona Incubator :: Alerter :: Mail</name>
+  <name>Sirona Incubator :: Alerter :: Mail</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-api</artifactId>
       <version>${project.version}</version>
       <scope>provided</scope>

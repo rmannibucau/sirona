@@ -17,7 +17,7 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <artifactId>sirona-server</artifactId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
@@ -25,7 +25,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>sirona-reporting</artifactId>
-  <name>Apache Sirona Incubator :: Server :: Reporting</name>
+  <name>Sirona Incubator :: Server :: Reporting</name>
   <packaging>pom</packaging>
 
   <properties>
@@ -46,7 +46,7 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.apache.sirona</groupId>
+        <groupId>com.github.rmannibucau.sirona</groupId>
         <artifactId>sirona-reporting-api</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -81,7 +81,7 @@
           <path>${tomcatRunPath}</path>
           <skip>${sirona.reporting.tomcat.skip}</skip>
           <systemProperties>
-            <org.apache.sirona.configuration.sirona.properties>${sirona.properties.path}</org.apache.sirona.configuration.sirona.properties>
+            <com.github.rmannibucau.sirona.configuration.sirona.properties>${sirona.properties.path}</com.github.rmannibucau.sirona.configuration.sirona.properties>
           </systemProperties>
         </configuration>
       </plugin>

@@ -19,25 +19,25 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <artifactId>sirona</artifactId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
 
   <artifactId>sirona-core</artifactId>
   <packaging>jar</packaging>
-  <name>Apache Sirona Incubator :: Core</name>
+  <name>Sirona Incubator :: Core</name>
 
   <properties>
     <java.runtime>15</java.runtime>
-    <maven.compiler.source>1.5</maven.compiler.source>
-    <maven.compiler.target>1.5</maven.compiler.target>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
   </properties>
 
   <dependencies>
 
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-api</artifactId>
     </dependency>
 
@@ -47,7 +47,7 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-store-memory</artifactId>
     </dependency>
 
@@ -58,50 +58,5 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>jenkins-1.5</id>
-      <properties>
-        <maven.compiler.source>1.5</maven.compiler.source>
-        <maven.compiler.target>1.5</maven.compiler.target>
-      </properties>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-toolchains-plugin</artifactId>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>toolchain</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <toolchains>
-                <jdk>
-                  <version>1.5</version>
-                  <vendor>sun</vendor>
-                </jdk>
-              </toolchains>
-            </configuration>
-          </plugin>
-        </plugins>
-        <pluginManagement>
-          <plugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-compiler-plugin</artifactId>
-              <configuration>
-                <fork>true</fork>
-              </configuration>
-            </plugin>
-          </plugins>
-        </pluginManagement>
-
-      </build>
-    </profile>
-  </profiles>
 
 </project>

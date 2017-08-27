@@ -18,14 +18,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <artifactId>sirona-server</artifactId>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>sirona-collector</artifactId>
-  <name>Apache Sirona Incubator :: Server :: Collector</name>
+  <name>Sirona Incubator :: Server :: Collector</name>
   <packaging>war</packaging>
 
   <properties>
@@ -40,15 +40,15 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-core</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-store-memory</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-reporting-webapp</artifactId>
       <version>${project.version}</version>
       <classifier>classes</classifier>
@@ -71,7 +71,7 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-cube</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
@@ -89,7 +89,7 @@
       <artifactId>jzlib</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-cassandra</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
@@ -124,7 +124,7 @@
           <path>${tomcatRunPath}</path>
           <useTestClasspath>true</useTestClasspath>
           <systemProperties>
-            <org.apache.sirona.configuration.sirona.properties>${basedir}/src/test/sirona.properties</org.apache.sirona.configuration.sirona.properties>
+            <com.github.rmannibucau.sirona.configuration.sirona.properties>${basedir}/src/test/sirona.properties</com.github.rmannibucau.sirona.configuration.sirona.properties>
           </systemProperties>
         </configuration>
       </plugin>
@@ -137,7 +137,7 @@
           <configuration>
             <systemPropertyVariables>
               <collector.server.port>${collector.server.port}</collector.server.port>
-              <org.apache.sirona.cube.CubeBuilder.collector>http://localhost:${collector.server.port}</org.apache.sirona.cube.CubeBuilder.collector>
+              <com.github.rmannibucau.sirona.cube.CubeBuilder.collector>http://localhost:${collector.server.port}</com.github.rmannibucau.sirona.cube.CubeBuilder.collector>
             </systemPropertyVariables>
           </configuration>
         </plugin>

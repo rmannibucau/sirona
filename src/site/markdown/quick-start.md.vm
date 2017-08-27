@@ -1,0 +1,175 @@
+<!---
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+Quick Start
+=============
+
+How to enable Sirona in your web application.
+
+NOTE: this simple configuration save figures in memory (so no more after restart!!)
+
+If you want to store datas, you must have a look at the [Cassandra Storage](./cassandra.html).
+
+Declare version
+-----------------
+
+<pre class="prettyprint linenums"><![CDATA[
+
+<properties>
+  <sirona.version>0.2-incubating</sirona.version>
+</properties>
+
+<dependencies>
+  ....
+  <!-- sirona dependencies -->
+  <dependency>
+    <groupId>com.github.rmannibucau.sirona</groupId>
+    <artifactId>sirona-core</artifactId>
+    <version>${sirona.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>com.github.rmannibucau.sirona</groupId>
+    <artifactId>sirona-reporting</artifactId>
+    <version>${sirona.version}</version>
+    <classifier>classes</classifier>
+  </dependency>
+  ...
+</dependencies>
+]]></pre>
+
+Configuration
+--------------
+
+If you are using a servlet 3.0 container nothing to do as we use ServletContainerInitializer mechanism.
+Otherwise you need to configure the filter class com.github.rmannibucau.sirona.reporting.web.SironaController .
+
+In web.xml
+
+<pre class="prettyprint linenums"><![CDATA[
+<!-- activated per default -->
+<context-param>
+  <param-name>com.github.rmannibucau.sirona.reporting.activated</param-name>
+  <param-value>true</param-value>
+</context-param>
+<!-- path in the application default is /sirona -->
+<context-param>
+  <param-name>com.github.rmannibucau.sirona.reporting.mapping</param-name>
+  <param-value>/monitoring</param-value>
+</context-param>
+]]></pre>
+
+Using
+--------------
+
+Just start your application and now browse /sirona (or the path you configured) and have fun (or not).
+
+NOTE: the configuration include only basic collectors. If you need more figures you need to add more dependencies
+
+More figures
+--------------
+
+Web figures
+--------------
+
+To collect various web informations as:
+
+* response time per http return code
+* hits, response time etc.. per http path
+* number of active sessions
+* etc.. see  [Web plugin](./web.html).
+
+Simply add the dependency:
+
+<pre class="prettyprint linenums"><![CDATA[
+<dependencies>
+  ....
+  <dependency>
+    <groupId>com.github.rmannibucau.sirona</groupId>
+    <artifactId>sirona-web</artifactId>
+    <version>${sirona.version}</version>
+  </dependency>
+...
+</dependencies>
+]]></pre>
+
+JDBC
+--------------
+
+To collect response time for jdbc queries.
+
+Add the dependency:
+
+<pre class="prettyprint linenums"><![CDATA[
+<dependencies>
+  ....
+  <dependency>
+    <groupId>com.github.rmannibucau.sirona</groupId>
+    <artifactId>sirona-jdbc</artifactId>
+    <version>${sirona.version}</version>
+  </dependency>
+  ...
+</dependencies>
+]]></pre>
+
+Configure the jdbc driver now
+
+Normal configuration:
+
+<pre class="prettyprint linenums"><![CDATA[
+driverClassName="org.apache.derby.jdbc.EmbeddedDriver"
+url="jdbc:derby:${appserver.base}/database/users;create=true"
+]]></pre>
+
+Sirona configuration:
+
+<pre class="prettyprint linenums"><![CDATA[
+driverClassName="com.github.rmannibucau.sirona.jdbc.SironaDriver"
+url="jdbc:sirona:derby:${appserver.base}/database/users;create=true?delegateDriver=org.apache.derby.jdbc.EmbeddedDriver"
+]]></pre>
+
+More details: [jdbc](./jjdbc.html)
+
+Others
+--------
+
+Some others agent exists for:
+
+* [aop, cdi](./instrumentation.html)
+* [jaxrs](./jaxrs.html)
+* [jta](./jta.html)
+* [ehcache](./ehcache.html)
+* [jpa](./jpa.html)
+
+Pushing datas
+--------------
+
+You can push datas to storage mechanism:
+
+* [graphite](./graphite.html)
+* [Square Cube](./jarxs.html)
+* [WebSocket](./websocket.html)
+
+
+
+
+Documentation coming soon :-)
+
+
+
+
+

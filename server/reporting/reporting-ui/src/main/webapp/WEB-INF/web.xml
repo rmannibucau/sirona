@@ -22,7 +22,7 @@
 
   <context-param> <!-- only register this webapp gauges -->
     <param-name>monitoring.discovery.packages</param-name>
-    <param-value>org.apache.sirona.reporting.web.plugin</param-value>
+    <param-value>com.github.rmannibucau.sirona.reporting.web.plugin</param-value>
   </context-param>
 
   <context-param>

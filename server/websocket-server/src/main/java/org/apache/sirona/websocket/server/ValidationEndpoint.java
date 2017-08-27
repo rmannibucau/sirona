@@ -14,15 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.sirona.websocket.server;
+package com.github.rmannibucau.sirona.websocket.server;
 
 import org.apache.johnzon.websocket.mapper.JohnzonTextDecoder;
-import org.apache.sirona.configuration.ioc.IoCs;
-import org.apache.sirona.repositories.Repository;
-import org.apache.sirona.status.NodeStatus;
-import org.apache.sirona.status.ValidationResult;
-import org.apache.sirona.store.status.CollectorNodeStatusDataStore;
-import org.apache.sirona.websocket.client.domain.WSValidation;
+import com.github.rmannibucau.sirona.configuration.ioc.IoCs;
+import com.github.rmannibucau.sirona.repositories.Repository;
+import com.github.rmannibucau.sirona.status.NodeStatus;
+import com.github.rmannibucau.sirona.status.ValidationResult;
+import com.github.rmannibucau.sirona.store.status.CollectorNodeStatusDataStore;
+import com.github.rmannibucau.sirona.websocket.client.domain.WSValidation;
 
 import javax.websocket.OnMessage;
 import javax.websocket.server.ServerEndpoint;

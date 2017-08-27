@@ -17,7 +17,7 @@
 -->
 <openejb-jar>
   <!-- needed for TomEE 1 but not TomEE 7 (even if doesnt hurt) -->
-  <pojo-deployment class-name="org.apache.sirona.reporting.web.configuration.SironaApplication">
+  <pojo-deployment class-name="com.github.rmannibucau.sirona.reporting.web.configuration.SironaApplication">
     <properties>
       cxf.jaxrs.skip-provider-scanning = true
       cxf.jaxrs.providers = org.apache.johnzon.jaxrs.JohnzonProvider,org.apache.openejb.server.cxf.rs.EJBAccessExceptionMapper

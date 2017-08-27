@@ -20,22 +20,22 @@
 
   <parent>
     <artifactId>sirona-performance</artifactId>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
 
   <artifactId>sirona-aop</artifactId>
-  <name>Apache Sirona Incubator :: Agent :: Performance :: AOP</name>
+  <name>Sirona Incubator :: Agent :: Performance :: AOP</name>
 
   <properties>
-    <java.runtime>15</java.runtime>
-    <maven.compiler.source>1.5</maven.compiler.source>
-    <maven.compiler.target>1.5</maven.compiler.target>
+    <java.runtime>16</java.runtime>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-core</artifactId>
     </dependency>
     <dependency>
@@ -49,45 +49,5 @@
       <artifactId>junit</artifactId>
     </dependency>
   </dependencies>
-
-  <profiles>
-    <profile>
-      <id>jenkins-1.5</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-toolchains-plugin</artifactId>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>toolchain</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <toolchains>
-                <jdk>
-                  <version>1.5</version>
-                  <vendor>sun</vendor>
-                </jdk>
-              </toolchains>
-            </configuration>
-          </plugin>
-        </plugins>
-        <pluginManagement>
-          <plugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-compiler-plugin</artifactId>
-              <configuration>
-                <fork>true</fork>
-              </configuration>
-            </plugin>
-          </plugins>
-        </pluginManagement>
-      </build>
-    </profile>
-  </profiles>
 
 </project>

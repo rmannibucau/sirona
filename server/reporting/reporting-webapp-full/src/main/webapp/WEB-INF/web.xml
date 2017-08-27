@@ -21,12 +21,12 @@
          version="3.0">
   <context-param> <!-- only register this webapp gauges -->
     <param-name>monitoring.discovery.packages</param-name>
-    <param-value>org.apache.sirona.reporting.web.plugin</param-value>
+    <param-value>com.github.rmannibucau.sirona.reporting.web.plugin</param-value>
   </context-param>
 
   <filter>
     <filter-name>Monitoring</filter-name>
-    <filter-class>org.apache.sirona.reporting.web.SironaController</filter-class>
+    <filter-class>com.github.rmannibucau.sirona.reporting.web.SironaController</filter-class>
   </filter>
 
   <servlet>

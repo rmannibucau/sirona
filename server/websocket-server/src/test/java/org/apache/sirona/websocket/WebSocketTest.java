@@ -14,29 +14,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.sirona.websocket;
+package com.github.rmannibucau.sirona.websocket;
 
 import org.apache.catalina.startup.Constants;
 import org.apache.johnzon.websocket.mapper.JohnzonTextDecoder;
-import org.apache.sirona.Role;
-import org.apache.sirona.alert.AlertListener;
-import org.apache.sirona.configuration.ioc.IoCs;
-import org.apache.sirona.counters.Counter;
-import org.apache.sirona.counters.Unit;
-import org.apache.sirona.gauges.Gauge;
-import org.apache.sirona.repositories.DefaultRepository;
-import org.apache.sirona.repositories.Repository;
-import org.apache.sirona.status.NodeStatus;
-import org.apache.sirona.status.NodeStatusReporter;
-import org.apache.sirona.status.Status;
-import org.apache.sirona.status.ValidationResult;
-import org.apache.sirona.store.memory.tracking.InMemoryPathTrackingDataStore;
-import org.apache.sirona.websocket.client.WebSocketCounterDataStore;
-import org.apache.sirona.websocket.client.WebSocketGaugeDataStore;
-import org.apache.sirona.websocket.client.WebSocketNodeStatusDataStore;
-import org.apache.sirona.websocket.server.CounterEndpoint;
-import org.apache.sirona.websocket.server.GaugeEndpoint;
-import org.apache.sirona.websocket.server.ValidationEndpoint;
+import com.github.rmannibucau.sirona.Role;
+import com.github.rmannibucau.sirona.alert.AlertListener;
+import com.github.rmannibucau.sirona.configuration.ioc.IoCs;
+import com.github.rmannibucau.sirona.counters.Counter;
+import com.github.rmannibucau.sirona.counters.Unit;
+import com.github.rmannibucau.sirona.gauges.Gauge;
+import com.github.rmannibucau.sirona.repositories.DefaultRepository;
+import com.github.rmannibucau.sirona.repositories.Repository;
+import com.github.rmannibucau.sirona.status.NodeStatus;
+import com.github.rmannibucau.sirona.status.NodeStatusReporter;
+import com.github.rmannibucau.sirona.status.Status;
+import com.github.rmannibucau.sirona.status.ValidationResult;
+import com.github.rmannibucau.sirona.store.memory.tracking.InMemoryPathTrackingDataStore;
+import com.github.rmannibucau.sirona.websocket.client.WebSocketCounterDataStore;
+import com.github.rmannibucau.sirona.websocket.client.WebSocketGaugeDataStore;
+import com.github.rmannibucau.sirona.websocket.client.WebSocketNodeStatusDataStore;
+import com.github.rmannibucau.sirona.websocket.server.CounterEndpoint;
+import com.github.rmannibucau.sirona.websocket.server.GaugeEndpoint;
+import com.github.rmannibucau.sirona.websocket.server.ValidationEndpoint;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;

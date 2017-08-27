@@ -18,18 +18,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <artifactId>sirona-collector-store</artifactId>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>sirona-cassandra</artifactId>
-  <name>Apache Sirona Incubator :: Server :: Store :: Cassandra</name>
+  <name>Sirona Incubator :: Server :: Store :: Cassandra</name>
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-core</artifactId>
     </dependency>
 
@@ -106,19 +106,19 @@
               <relocations>
                 <relocation>
                   <pattern>com.google</pattern>
-                  <shadedPattern>org.apache.sirona.google</shadedPattern>
+                  <shadedPattern>com.github.rmannibucau.sirona.google</shadedPattern>
                 </relocation>
                 <relocation>
                   <pattern>org.apache</pattern>
-                  <shadedPattern>org.apache.sirona.apache</shadedPattern>
+                  <shadedPattern>com.github.rmannibucau.sirona.apache</shadedPattern>
                 </relocation>
                 <relocation>
                   <pattern>me.prettyprint</pattern>
-                  <shadedPattern>org.apache.sirona.me.prettyprint</shadedPattern>
+                  <shadedPattern>com.github.rmannibucau.sirona.me.prettyprint</shadedPattern>
                 </relocation>
                 <relocation>
                   <pattern>com.eaio</pattern>
-                  <shadedPattern>org.apache.sirona.com.eaio</shadedPattern>
+                  <shadedPattern>com.github.rmannibucau.sirona.com.eaio</shadedPattern>
                 </relocation>
 
               </relocations>

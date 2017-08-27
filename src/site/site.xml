@@ -15,15 +15,15 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-<project name="Apache Sirona"
+<project name="Sirona"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/DECORATION/1.0.1"
          xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.1
                              http://maven.apache.org/xsd/decoration-1.0.1.xsd">
   <bannerLeft>
-    <name>Apache Sirona</name>
+    <name>Sirona</name>
     <!--<src>/images/commons-logo.png</src>-->
-    <alt>Apache Sirona logo</alt>
+    <alt>Sirona logo</alt>
     <href>http://sirona.incubator.apache.org</href>
   </bannerLeft>
   <googleAnalyticsAccountId>UA-140879-5</googleAnalyticsAccountId>
@@ -75,11 +75,11 @@
 
     <footer id="main-footer">
       <p class="text-muted">
-        Apache Sirona, Apache, the Apache feather logo, and the Apache Sirona project logos are trademarks of The Apache Software Foundation.
+        Sirona, Apache, the Apache feather logo, and the Sirona project logos are trademarks of The Apache Software Foundation.
         All other marks mentioned may be trademarks or registered trademarks of their respective owners.
       </p>
       <p class="text-muted">
-        <small>Apache Sirona is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</small>
+        <small>Sirona is an effort undergoing incubation at The Apache Software Foundation (ASF), sponsored by the Apache Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</small>
       </p>
       <a href="${project.url}/privacy-policy.html">Privacy Policy</a>
     </footer>

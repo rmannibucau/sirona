@@ -14,10 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.sirona.jta;
+package com.github.rmannibucau.sirona.jta;
 
-import org.apache.sirona.gauges.Gauge;
-import org.apache.sirona.repositories.Repository;
+import com.github.rmannibucau.sirona.gauges.Gauge;
+import com.github.rmannibucau.sirona.repositories.Repository;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

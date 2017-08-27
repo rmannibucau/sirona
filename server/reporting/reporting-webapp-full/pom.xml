@@ -17,14 +17,14 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <artifactId>sirona-reporting</artifactId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>sirona-reporting-webapp-full</artifactId>
-  <name>Apache Sirona Incubator :: Server :: Reporting :: Webapp Full</name>
+  <name>Sirona Incubator :: Server :: Reporting :: Webapp Full</name>
   <packaging>war</packaging>
   <description>Intended for Servlet only containers</description>
 
@@ -52,17 +52,17 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-core</artifactId>
       <scope>provided</scope> <!-- using to put it in the container to get JDBC monitoring and deploy the webapp -->
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-aop</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-reporting-api</artifactId>
     </dependency>
 
@@ -78,7 +78,7 @@
       <version>${johnzon.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-reporting-webapp</artifactId>
       <version>${project.version}</version>
       <classifier>classes</classifier>
@@ -152,17 +152,17 @@
           <path>${tomcatRunPath}</path>
           <skip>${sirona.reporting.ui.tomcat.skip}</skip>
           <systemProperties>
-            <org.apache.sirona.configuration.sirona.properties>${sirona.properties.path}</org.apache.sirona.configuration.sirona.properties>
+            <com.github.rmannibucau.sirona.configuration.sirona.properties>${sirona.properties.path}</com.github.rmannibucau.sirona.configuration.sirona.properties>
           </systemProperties>
         </configuration>
         <dependencies>
           <dependency>
-            <groupId>org.apache.sirona</groupId>
+            <groupId>com.github.rmannibucau.sirona</groupId>
             <artifactId>sirona-core</artifactId>
             <version>${project.version}</version>
           </dependency>
           <dependency>
-            <groupId>org.apache.sirona</groupId>
+            <groupId>com.github.rmannibucau.sirona</groupId>
             <artifactId>sirona-aop</artifactId>
             <version>${project.version}</version>
           </dependency>
@@ -201,12 +201,12 @@
             <artifactId>tomcat7-maven-plugin</artifactId>
             <dependencies>
               <dependency>
-                <groupId>org.apache.sirona</groupId>
+                <groupId>com.github.rmannibucau.sirona</groupId>
                 <artifactId>sirona-core</artifactId>
                 <version>${project.version}</version>
               </dependency>
               <dependency>
-                <groupId>org.apache.sirona</groupId>
+                <groupId>com.github.rmannibucau.sirona</groupId>
                 <artifactId>sirona-cassandra</artifactId>
                 <version>${project.version}</version>
               </dependency>

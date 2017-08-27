@@ -20,12 +20,12 @@
 
   <parent>
     <artifactId>sirona-performance</artifactId>
-    <groupId>org.apache.sirona</groupId>
+    <groupId>com.github.rmannibucau.sirona</groupId>
     <version>0.4-incubating-SNAPSHOT</version>
   </parent>
 
   <artifactId>sirona-jpa</artifactId>
-  <name>Apache Sirona Incubator :: Agent :: Performance :: JPA</name>
+  <name>Sirona Incubator :: Agent :: Performance :: JPA</name>
 
   <dependencies>
     <dependency>
@@ -35,11 +35,11 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-core</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.sirona</groupId>
+      <groupId>com.github.rmannibucau.sirona</groupId>
       <artifactId>sirona-aop</artifactId>
       <exclusions>
         <exclusion>
