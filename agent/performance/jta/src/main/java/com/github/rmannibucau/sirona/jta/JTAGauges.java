@@ -17,7 +17,6 @@
 package com.github.rmannibucau.sirona.jta;
 
 import com.github.rmannibucau.sirona.Role;
-import com.github.rmannibucau.sirona.configuration.Configuration;
 import com.github.rmannibucau.sirona.counters.Unit;
 import com.github.rmannibucau.sirona.gauges.Gauge;
 import com.github.rmannibucau.sirona.gauges.GaugeFactory;
@@ -35,23 +34,20 @@ public class JTAGauges implements GaugeFactory {
 
     @Override
     public Gauge[] gauges() {
-        final long period = Configuration.getInteger(Configuration.CONFIG_PROPERTY_PREFIX + "gauge.jta.period", 4000);
-        return new Gauge[] {
-            new JTAGauge(JTA_COMMITED, COMMITTED, period),
-            new JTAGauge(JTA_ROLLBACKED, ROLLBACKED, period),
-            new JTAActiveGauge(JTA_ACTIVE, ACTIVE, period)
+        return new Gauge[]{
+            new JTAGauge(JTA_COMMITED, COMMITTED),
+            new JTAGauge(JTA_ROLLBACKED, ROLLBACKED),
+            new JTAActiveGauge(JTA_ACTIVE, ACTIVE)
         };
     }
 
     protected static class JTAGauge implements Gauge {
         private final Role role;
-        private final long period;
         protected final AtomicLong counter;
 
-        protected JTAGauge(final Role role, final AtomicLong counter, final long period) {
+        protected JTAGauge(final Role role, final AtomicLong counter) {
             this.role = role;
             this.counter = counter;
-            this.period = period;
         }
 
         @Override
@@ -66,8 +62,8 @@ public class JTAGauges implements GaugeFactory {
     }
 
     protected static class JTAActiveGauge extends JTAGauge {
-        protected JTAActiveGauge(final Role role, final AtomicLong counter, final long period) {
-            super(role, counter, period);
+        protected JTAActiveGauge(final Role role, final AtomicLong counter) {
+            super(role, counter);
         }
 
         @Override

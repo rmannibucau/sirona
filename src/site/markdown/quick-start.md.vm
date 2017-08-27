@@ -31,7 +31,7 @@ Declare version
 <pre class="prettyprint linenums"><![CDATA[
 
 <properties>
-  <sirona.version>0.2-incubating</sirona.version>
+  <sirona.version>0.2</sirona.version>
 </properties>
 
 <dependencies>

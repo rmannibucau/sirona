@@ -21,7 +21,7 @@
   <parent>
     <groupId>com.github.rmannibucau.sirona</groupId>
     <artifactId>sirona-reporting</artifactId>
-    <version>0.4-incubating-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
   </parent>
 
   <artifactId>sirona-reporting-ui</artifactId>
@@ -36,7 +36,7 @@
   <dependencies>
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
-      <artifactId>geronimo-json_1.0_spec</artifactId>
+      <artifactId>geronimo-json_1.1_spec</artifactId>
       <scope>compile</scope>
     </dependency>
 
@@ -136,11 +136,10 @@
         </dependencies>
       </plugin>
       <plugin>
-        <groupId>org.apache.openejb.maven</groupId>
+        <groupId>org.apache.tomee.maven</groupId>
         <artifactId>tomee-maven-plugin</artifactId>
-        <version>1.6.0.2</version>
+        <version>${tomee.version}</version>
         <configuration>
-          <tomeeVersion>1.6.0.2</tomeeVersion>
           <tomeeClassifier>plus</tomeeClassifier>
           <libs>
             <lib>com.github.rmannibucau.sirona:sirona-core:${project.version}</lib>
