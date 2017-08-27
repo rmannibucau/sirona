@@ -27,6 +27,7 @@ import javax.ejb.Lock;
 import javax.ejb.LockType;
 import javax.ejb.Singleton;
 import javax.ejb.embeddable.EJBContainer;
+import javax.interceptor.Interceptors;
 import java.util.Collection;
 import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
@@ -113,7 +114,7 @@ public class GaugesTest {
 
     @Singleton
     @Lock(LockType.READ)
-    @JTAMonitored
+    @Interceptors(JTAInterceptor.class)
     public static class EjbWithJTASupport {
         public void commit() {
             try {

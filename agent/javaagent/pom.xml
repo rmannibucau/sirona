@@ -19,7 +19,7 @@
   <parent>
     <artifactId>sirona-agent</artifactId>
     <groupId>com.github.rmannibucau.sirona</groupId>
-    <version>0.4-incubating-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -81,9 +81,9 @@
     </dependency>
     <!-- saw some issues in EE context so importing it brutally for testing -->
     <dependency>
-      <groupId>org.apache.openejb</groupId>
+      <groupId>org.apache.tomee</groupId>
       <artifactId>javaee-api</artifactId>
-      <version>6.0-5</version>
+      <version>7.0-1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -93,9 +93,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.openejb</groupId>
+      <groupId>org.apache.tomee</groupId>
       <artifactId>openejb-core</artifactId>
-      <version>4.6.0</version>
+      <version>${tomee.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>

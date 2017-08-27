@@ -19,7 +19,7 @@
   <parent>
     <artifactId>sirona-server</artifactId>
     <groupId>com.github.rmannibucau.sirona</groupId>
-    <version>0.4-incubating-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
@@ -33,7 +33,7 @@
     </dependency>
     <dependency>
       <groupId>org.apache.geronimo.specs</groupId>
-      <artifactId>geronimo-json_1.0_spec</artifactId>
+      <artifactId>geronimo-json_1.1_spec</artifactId>
     </dependency>
     <dependency>
       <groupId>org.apache.johnzon</groupId>
@@ -93,7 +93,7 @@
       <artifactId>ecj</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.apache.openejb</groupId>
+      <groupId>org.apache.tomee</groupId>
       <artifactId>ziplock</artifactId>
       <version>${tomee.version}</version>
       <scope>test</scope>

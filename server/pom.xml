@@ -19,7 +19,7 @@
   <parent>
     <artifactId>sirona</artifactId>
     <groupId>com.github.rmannibucau.sirona</groupId>
-    <version>0.4-incubating-SNAPSHOT</version>
+    <version>0.4-SNAPSHOT</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -27,10 +27,6 @@
   <artifactId>sirona-server</artifactId>
   <name>Sirona Incubator :: Server</name>
   <packaging>pom</packaging>
-
-  <properties>
-    <tomee.version>1.7.1</tomee.version>
-  </properties>
 
   <modules>
     <module>collector</module>
