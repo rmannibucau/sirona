@@ -125,8 +125,8 @@
   </mailingLists>
 
   <scm>
-    <connection>scm:svn:https://github.com/rmannibucau/sirona.git</connection>
-    <developerConnection>scm:https://github.com/rmannibucau/sirona.git</developerConnection>
+    <connection>scm:git:https://github.com/rmannibucau/sirona.git</connection>
+    <developerConnection>scm:git:https://github.com/rmannibucau/sirona.git</developerConnection>
     <url>https://github.com/rmannibucau/sirona</url>
   </scm>
 
