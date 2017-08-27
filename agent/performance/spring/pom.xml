@@ -21,7 +21,7 @@
   <parent>
     <artifactId>sirona-performance</artifactId>
     <groupId>com.github.rmannibucau.sirona</groupId>
-    <version>0.6-SNAPSHOT</version>
+    <version>0.6</version>
   </parent>
 
   <artifactId>sirona-spring</artifactId>
