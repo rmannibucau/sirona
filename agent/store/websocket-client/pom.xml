@@ -21,7 +21,7 @@
   <parent>
     <artifactId>sirona-agent-store</artifactId>
     <groupId>com.github.rmannibucau.sirona</groupId>
-    <version>0.6</version>
+    <version>0.7-SNAPSHOT</version>
   </parent>
 
   <artifactId>sirona-websocket-client</artifactId>
