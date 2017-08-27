@@ -1,0 +1,102 @@
+#*
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+*#
+<h1>Report</h1>
+
+<ul class="nav nav-pills">
+    <li class="dropdown">
+        <a id="actions" role="button" data-toggle="dropdown" href="#">Actions <b class="caret"></b></a>
+        <ul id="actions-list" class="dropdown-menu" role="menu" aria-labelledby="actions">
+            <li role="presentation"><a role="menuitem" href="$mapping/report/clear">Clear</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a id="formats" role="button" data-toggle="dropdown" href="#">Formats <b class="caret"></b></a>
+        <ul id="formats-list" class="dropdown-menu" role="menu" aria-labelledby="formats">
+            <li role="presentation"><a role="menuitem" href="$mapping/report.xml">xml</a></li>
+            <li role="presentation"><a role="menuitem" href="$mapping/report.csv">csv</a></li>
+            <li role="presentation"><a role="menuitem" href="$mapping/report.json">json</a></li>
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a id="units" role="button" data-toggle="dropdown" href="#">Units <b class="caret"></b></a>
+        <ul id="units-list" class="dropdown-menu" role="menu" aria-labelledby="units">
+            <li role="presentation"><a role="menuitem" href="$mapping/report?unit=s">s</a></li>
+            <li role="presentation"><a role="menuitem" href="$mapping/report?unit=ms">ms</a></li>
+            <li role="presentation"><a role="menuitem" href="$mapping/report?unit=ns">ns</a></li>
+        </ul>
+    </li>
+</ul>
+
+<table id="report-table">
+    <thead>
+    <tr>
+        #foreach( $header in $headers )
+            <th>$header</th>
+        #end
+    </tr>
+    </thead>
+    <tbody>
+        #foreach( $line in $data.entrySet() )
+        <tr>
+            #foreach( $item in $line.getValue() )
+                <td>
+                    #if ($foreach.isFirst())
+                        <a href="$mapping/report/counter/$line.getKey()">$item</a>
+                    #else
+                        $item
+                    #end
+                </td>
+            #end
+        </tr>
+        #end
+    </tbody>
+</table>
+
+<script type="text/javascript" src="$mapping/resources/js/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="$mapping/resources/js/jquery.tablesorter.widgets.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $.extend($.tablesorter.themes.bootstrap, {
+            table      : 'table table-bordered table-hover table-striped tablesorter',
+            header     : 'bootstrap-header',
+            footerRow  : '',
+            footerCells: '',
+            icons      : '',
+            sortNone   : 'bootstrap-icon-unsorted',
+            sortAsc    : 'icon-chevron-up glyphicon glyphicon-chevron-up',
+            sortDesc   : 'icon-chevron-down glyphicon glyphicon-chevron-down',
+            active     : '',
+            hover      : '',
+            filterRow  : '',
+            even       : '',
+            odd        : ''
+        });
+
+        $("table#report-table").tablesorter({
+            theme : 'bootstrap',
+            headerTemplate: '{content} {icon}',
+            widgets    : [ 'uitheme', 'filter', 'zebra' ],
+            widgetOptions: {
+                zebra : ["even", "odd"]
+            }
+        });
+
+        // input search box shouldn't force the width of columns
+        $('input[type="search"].tablesorter-filter').addClass('col-lg-12')
+        $('input[type="search"].tablesorter-filter').addClass('smooth-box')
+    });
+</script>

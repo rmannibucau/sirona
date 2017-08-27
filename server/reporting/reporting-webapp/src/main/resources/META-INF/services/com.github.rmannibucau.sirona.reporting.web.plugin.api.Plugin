@@ -1,0 +1,9 @@
+com.github.rmannibucau.sirona.reporting.web.plugin.report.ReportPlugin
+com.github.rmannibucau.sirona.reporting.web.plugin.gauge.GaugePlugin
+com.github.rmannibucau.sirona.reporting.web.plugin.status.StatusPlugin
+com.github.rmannibucau.sirona.reporting.web.plugin.jmx.JMXPlugin
+com.github.rmannibucau.sirona.reporting.web.plugin.jvm.JVMPlugin
+com.github.rmannibucau.sirona.reporting.web.plugin.jta.JTAPlugin
+com.github.rmannibucau.sirona.reporting.web.plugin.thread.ThreadPlugin
+com.github.rmannibucau.sirona.reporting.web.plugin.web.WebPlugin
+com.github.rmannibucau.sirona.reporting.web.plugin.pathtracking.PathTrackingPlugin

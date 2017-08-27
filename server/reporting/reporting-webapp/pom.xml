@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.github.rmannibucau.sirona</groupId>
+    <artifactId>sirona-reporting</artifactId>
+    <version>0.4-incubating-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>sirona-reporting-webapp</artifactId>
+  <name>Sirona Incubator :: Server :: Reporting :: Webapp</name>
+  <packaging>war</packaging>
+
+  <properties>
+    <sirona.reporting.tomcat.skip>false</sirona.reporting.tomcat.skip>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-servlet_3.0_spec</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-json_1.0_spec</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.rmannibucau.sirona</groupId>
+      <artifactId>sirona-reporting-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.github.rmannibucau.sirona</groupId>
+      <artifactId>sirona-core</artifactId>
+      <scope>provided</scope> <!-- using to put it in the container to get JDBC monitoring and deploy the webapp -->
+    </dependency>
+    <dependency>
+      <groupId>com.github.rmannibucau.sirona</groupId>
+      <artifactId>sirona-aop</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.rmannibucau.sirona</groupId>
+      <artifactId>sirona-plugins-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.rmannibucau.sirona</groupId>
+      <artifactId>sirona-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity</artifactId>
+      <version>1.7</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.johnzon</groupId>
+      <artifactId>johnzon-jaxrs</artifactId>
+      <version>0.9.2-incubating</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.openejb.maven</groupId>
+        <artifactId>tomee-maven-plugin</artifactId>
+        <version>${tomee.version}</version>
+        <configuration>
+          <tomeeClassifier>jaxrs</tomeeClassifier>
+          <simpleLog>true</simpleLog>
+          <libs>
+            <lib>${project.groupId}:sirona-api:${project.version}</lib>
+            <lib>${project.groupId}:sirona-core:${project.version}</lib>
+            <lib>${project.groupId}:sirona-aop:${project.version}</lib>
+            <lib>${project.groupId}:sirona-store-memory:${project.version}</lib>
+            <lib>org.apache.commons:commons-proxy:1.0</lib>
+          </libs>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

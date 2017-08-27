@@ -1,0 +1,69 @@
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<div class="row">
+  <div class="col-lg-3">
+    jmx home
+    <abn-tree tree-data="treeData" on-select="selectionHandler(branch)"></abn-tree>
+  </div>
+  <div class="col-lg-9">
+    <h1>{{mbean.objectName}}</h1>
+    <h2>{{mbean.classname}}</h2>
+
+    <div id="invoke-result">{{invokeResult}}</div>
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#attributes" role="tab" data-toggle="tab">Attributes</a></li>
+      <li><a href="#operations" role="tab" data-toggle="tab">Operations</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="attributes">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Value</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="attribute in mbean.attributes">
+              <td>{{attribute.name}}</td>
+              <td>{{attribute.description}}</td>
+              <td>{{attribute.value}}</td>
+              <td>{{attribute.type}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tab-pane" id="operations">
+        <ul>
+          <li ng-repeat="operation in mbean.operations">
+            <form class="form-inline" id="{{operation.name}}">
+              {{operation.name}}
+              <input ng-repeat="param in operation.parameters" type="text" class="input-small" placeholder="{{param.name}}:{{param.type}}">
+              <button type="submit" class="btn btn-primary" ng-click="invoke(operation.name,mbean.objectNameHash)">Invoke</button>
+            </form>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>

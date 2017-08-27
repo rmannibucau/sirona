@@ -1,0 +1,91 @@
+#*
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+*#
+<div class="page-header">
+    <h1><small><div id="objectName">$objectname</div></small></h1>
+    <h2><small>$classname</small></h2>
+</div>
+
+<div id="invoke-result"></div>
+
+<div class="tabbable">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#attributes" data-toggle="tab">Attributes</a></li>
+        <li><a href="#operations" data-toggle="tab">Operations</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="attributes">
+            <table id="mbean-table" class="table table-bordered table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Value</th>
+                    <th>Type</th>
+                </tr>
+                </thead>
+                <tbody>
+                    #foreach( $attribute in $attributes )
+                    <tr>
+                        <td>$attribute.name</td>
+                        <td>$attribute.description</td>
+                        <td>$attribute.value</td>
+                        <td>$attribute.type</td>
+                    </tr>
+                    #end
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-pane" id="operations">
+            <ul>
+                #foreach( $operation in $operations )
+                    <li>
+                        <form class="form-inline invoker" id="operation-${objectnameHash}-$operation.name">
+                            $operation.name (
+                            #foreach( $param in $operation.parameters )
+                                <input type="text" class="input-small" placeholder="$param.name: $param.type#if( $foreach.hasNext ),#end">
+                            #end
+                            )
+                            <button type="submit" class="btn btn-primary">Invoke</button>
+                        </form>
+                    </li>
+                #end
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function() {
+        $('.invoker').submit(function () {
+            var id = $(this).closest("form").attr('id');
+            var url = '$mapping/jmx/' + id.replace(/-/g, "/");
+
+            // we pass base64 as id so this is a workaround since = will likely make #id fail
+            $('[id=\'' + id + '\']' + ' :input').each(function () {
+                url = url + "/" + encodeURIComponent($(this).val());
+            });
+
+            $.get(url, function(data) {
+                var result = $('#invoke-result');
+                result.addClass('alert alert-success');
+                result.html(data);
+            });
+
+            return false;
+        });
+    });
+</script>

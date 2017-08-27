@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.github.rmannibucau.sirona</groupId>
+    <artifactId>sirona-reporting</artifactId>
+    <version>0.4-incubating-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>sirona-reporting-ui</artifactId>
+  <name>Sirona Incubator :: Server :: Reporting :: Ui</name>
+  <packaging>war</packaging>
+
+  <properties>
+    <sirona.reporting.ui.tomcat.skip>false</sirona.reporting.ui.tomcat.skip>
+    <log4j2.version>2.0</log4j2.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-json_1.0_spec</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.rmannibucau.sirona</groupId>
+      <artifactId>sirona-core</artifactId>
+      <scope>provided</scope> <!-- using to put it in the container to get JDBC monitoring and deploy the webapp -->
+    </dependency>
+    <dependency>
+      <groupId>com.github.rmannibucau.sirona</groupId>
+      <artifactId>sirona-reporting-api</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+      <version>${cxf.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.johnzon</groupId>
+      <artifactId>johnzon-jaxrs</artifactId>
+      <version>${johnzon.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${spring.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>1.7.7</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-servlet_3.0_spec</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <configuration>
+            <webXml>${basedir}/src/main/web/web.xml</webXml>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <configuration>
+          <port>${tomcatRunPort}</port>
+          <path>${tomcatRunPath}</path>
+          <skip>${sirona.reporting.ui.tomcat.skip}</skip>
+          <useTestClasspath>true</useTestClasspath>
+          <systemProperties>
+            <com.github.rmannibucau.sirona.configuration.sirona.properties>${sirona.properties.path}</com.github.rmannibucau.sirona.configuration.sirona.properties>
+          </systemProperties>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>com.github.rmannibucau.sirona</groupId>
+            <artifactId>sirona-core</artifactId>
+            <version>${project.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-1.2-api</artifactId>
+            <version>${log4j2.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j2.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jcl</artifactId>
+            <version>${log4j2.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>1.7.7</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.openejb.maven</groupId>
+        <artifactId>tomee-maven-plugin</artifactId>
+        <version>1.6.0.2</version>
+        <configuration>
+          <tomeeVersion>1.6.0.2</tomeeVersion>
+          <tomeeClassifier>plus</tomeeClassifier>
+          <libs>
+            <lib>com.github.rmannibucau.sirona:sirona-core:${project.version}</lib>
+          </libs>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

@@ -1,0 +1,5 @@
+= Sirona
+
+This is a fork of Apache Sirona which got retired at Apache foundation.
+
+Documentation can be found in src/site/markdown.
