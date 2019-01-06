@@ -81,7 +81,7 @@ public class SironaClassVisitor
      */
     public SironaClassVisitor( final ClassWriter writer, final String javaName, final byte[] buffer )
     {
-        super( ASM5, writer );
+        super( ASM7, writer );
         this.javaName = javaName;
         this.classfileBuffer = buffer;
     }
@@ -153,7 +153,7 @@ public class SironaClassVisitor
         public SironaAdviceAdapter( final MethodVisitor visitor, final int access, final String name, //
                                     final String desc, final String label )
         {
-            super( ASM5, visitor, access, name, desc );
+            super( ASM7, visitor, access, name, desc );
             this.isStatic = Modifier.isStatic( access );
             this.label = label;
             this.desc = desc;
