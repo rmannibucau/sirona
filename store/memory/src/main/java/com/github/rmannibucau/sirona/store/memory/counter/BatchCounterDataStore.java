@@ -36,12 +36,14 @@ public abstract class BatchCounterDataStore extends InMemoryCounterDataStore {
 
     protected final BatchFuture scheduledTask;
     protected final boolean clearAfterCollect;
+    protected final boolean sendAtShutdown;
 
     protected BatchCounterDataStore() {
         final String name = getClass().getSimpleName().toLowerCase(Locale.ENGLISH).replace("counterdatastore", "");
         final String prefix = Configuration.CONFIG_PROPERTY_PREFIX + name;
         final long period = getPeriod(prefix);
         clearAfterCollect = isClearAfterCollect(prefix);
+        sendAtShutdown = isSendAtShutdown(prefix);
 
         final ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor(new DaemonThreadFactory(name + "-counter-schedule-"));
         final ScheduledFuture<?> future = ses.scheduleAtFixedRate(new BatchPushCountersTask(), period, period, TimeUnit.MILLISECONDS);
@@ -52,6 +54,10 @@ public abstract class BatchCounterDataStore extends InMemoryCounterDataStore {
         return Configuration.is(prefix + ".counter.clearOnCollect", false);
     }
 
+    protected boolean isSendAtShutdown(final String prefix) {
+        return Configuration.is(prefix + ".counter.sendAtShutdown", false);
+    }
+
     protected int getPeriod(final String prefix) {
         return Configuration.getInteger(prefix + ".counter.period", Configuration.getInteger(prefix + ".period", 60000));
     }
@@ -59,6 +65,9 @@ public abstract class BatchCounterDataStore extends InMemoryCounterDataStore {
     @Destroying
     public void shutdown() {
         scheduledTask.done();
+        if (sendAtShutdown) {
+            new BatchPushCountersTask().run();
+        }
     }
 
     protected void clearCountersIfNeeded() {
