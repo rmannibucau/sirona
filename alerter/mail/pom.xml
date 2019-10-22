@@ -21,7 +21,7 @@
   <parent>
     <artifactId>sirona-alerter</artifactId>
     <groupId>com.github.rmannibucau.sirona</groupId>
-    <version>0.7-SNAPSHOT</version>
+    <version>0.7</version>
   </parent>
 
   <artifactId>sirona-mail-alerter</artifactId>
